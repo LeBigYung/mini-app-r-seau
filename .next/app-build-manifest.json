@@ -11,6 +11,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
+    "/api/favorites/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/favorites/route.js"
+    ],
     "/api/auth/[...nextauth]/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -20,6 +25,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/api/req_ft/route.js"
+    ],
+    "/api/sms/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/sms/route.js"
     ]
   }
 }

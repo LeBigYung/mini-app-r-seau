@@ -26,19 +26,24 @@ export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const motsCles = searchParams.get("motsCles") ?? "développeur";
     const departement = searchParams.get("departement") ?? "69";
+    const experience = searchParams.get("experience") ?? "";
+    const typeContrat = searchParams.get("typeContrat") ?? "";
     const range = searchParams.get("range") ?? "0-10";
     
     const token = await reqAccesToken();
 
-    const jobs = await axios.get(
-      "https://api.francetravail.io/partenaire/offresdemploi/v2/offres/search?motsCles=developpeur&departement=69&range=0-9",
+const jobs = await axios.get(
+      "https://api.francetravail.io/partenaire/offresdemploi/v2/offres/search",
       {
+        params: {
+          motsCles,
+          departement, 
+          typeContrat,
+          experience,
+          range: "0-9",
+        },
         headers: {
           Authorization: `Bearer ${token}`,
-          Accept: "application/json",
-        },
-        params: {
-          motsCles, departement, range
         },
       }
     );
